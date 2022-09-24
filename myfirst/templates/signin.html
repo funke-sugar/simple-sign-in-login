@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sign In</title>
+    </head>
+    <style>
+        .body{
+            background-color: chocolate;
+            text-align: center;
+            border-color:orange;
+        }
+
+        .h1{
+            color: white;
+            border-color:chocolate ;
+        }
+        .main{
+            background-color:orange;
+            border-color:chocolate;
+            width: 700px;
+            height:300px;
+        }
+        h3{
+            color:red;
+        }
+
+    
+    </style>
+    <body class="body">
+        <h1 class="h1">Sign-In To WELCOME!!</h1>
+        {% for message in messages%}
+        <h3>{{message}}</h3>
+        {% endfor %}
+        <form class="main" action="signin" method="POST">
+            {% csrf_token %}
+            
+            
+            <label id="usename">EMAIL\USERNAME:</label>
+            <input id="username" type="text"  placeholder="joe@yahoo.com" required name="username"><br><br>
+
+            <label id="password">PASSWORD:</label>
+            <input id="password" type="password" required name="password" ><br><br>
+
+            <button onclick="alert('Reset Password!')"  value="Click Me!">forget password?</button><br><br><br><br>
+
+            
+
+            <input type="submit" value="SIGN IN" style="width: 300px;; color:blue; background-color: white; border-color: chocolate;" >
+
+
+
+        
+
+        </form>
+    </body>
+    
+</html>

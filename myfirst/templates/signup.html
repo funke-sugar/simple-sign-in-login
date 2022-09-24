@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sign Up</title>
+    </head>
+    <style>
+        .body{
+            background-color:chocolate;
+            text-align: center;
+            border-color: yellow;
+        }
+
+        .h1{
+            color: white;
+            border-color:orange ;
+            border:width 10px
+        }
+        .main{
+            background-color:orange;
+            text-decoration-color: blue;
+            border: width 2px;;
+            border-color:yellow;
+            width: 700px;;
+        }
+        h5{
+            color: red;
+        }
+
+    
+    </style>
+    <body class="body">
+        <h1 class="h1">Sign-Up To WELCOME!!</h1>
+    {% for message in messages%}
+    <h5>{{message}}</h5>
+    {% endfor %}
+        <form class="main" method="POST" action="signup">
+            {% csrf_token %}
+            <label id="fullname">FULLNAME:</label><br>
+            <input id="fullname" type="text"   name="fullname" required><br><br>
+            
+            <label id="email">EMAIL:</label><br>
+            <input id="email" type="email"  placeholder="joe@yahoo.com" name="email" required><br><br>
+
+            <label id="mobile">MOBILE NO:</label><br>
+            <input id="mobile" type="text" pattern="+[0-9]{3} [0-9]{3} [0-9]{3} [0-9]{4}" placeholder="+234 706 884 9213"  name="mobile"><br><br>
+
+            <label id="wcode">W.CODE:</label><br>
+            <input id="wcode" type="text"  placeholder="BR 2064" name="wcode" required><br><br>
+
+            <label id="username">USERNAME:</label><br>
+            <input id="username"  type="text" name="username"><br><br>
+
+            <label id="password">PASSWORD:</label><br>
+            <input id="password" type="password" name="password" ><br><br>
+
+            <label id="password">REPEAT PASSWORD :</label><br>
+            <input id="password" type="password" name="password2" ><br><br>
+
+           <p>
+                How Did You Know About Us?</p>
+                <select>
+                    How did you know about us?
+                    <option value="Facebook">Facebook</option>
+                    <option value="Google" selected>Google</option>
+                    <option value="Twitter">Twitter</option>
+                    <option value="Instagram">Instagram</option>
+                    <option value="Snapchat">Snapchat</option>
+                    <option value="Tiktok">Tiktok</option>
+                </select>
+            </p>
+            <input type="submit" value="SIGN UP" style="width: 300px;; color:blue; background-color: white; 
+            border-color: chocolate;" >
+
+
+
+        
+
+        </form>
+    </body>
+    
+</html>

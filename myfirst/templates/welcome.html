@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<htML>
+    <head>
+        <title>welcome page</title>
+    </head>
+    <body style="background-color:chocolate; " method="POST">
+        <ul style="text-align:right; color:brown; background-color: blanchedalmond;">
+            <li><a  href="body.html">Home </a></li>  
+            <li><a  href="#">About</a></li> 
+            <li><a  href="#">Contact </a></li>
+            {% if user.is_authenticated %} 
+            <li><a  href="signout">Sign-Out </a></li> 
+            {% else%} 
+            <li><a  href="signin">Sign-In/SignOut</a></li> 
+            {% endif %}
+        </ul>
+        {% if user.is_authenticated %}
+        <h1 style="color:white; background-color: orange;">Welcome, To WELCOME!!<br>
+            <small> Hello, {{user.username}}</small>
+        </h1>
+        {% else %}
+        <h1  style="color:white; background-color: orange;">Welcome, To WELCOME!!</h1>
+        {% endif %}
+        
+        
+    </body>
+</htML>
